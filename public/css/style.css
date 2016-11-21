@@ -59,7 +59,7 @@ body {
 /* Table Header */
 
 .table__header {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Futura', 'Didact Gothic', sans-serif;
   letter-spacing: 1rem;
   border: 2px solid lightgray;
@@ -91,19 +91,38 @@ body {
   border-radius: 10px;
   width: 6rem;
   cursor: pointer;
+  transition: all .2s ease;
 }
 
 .table__button--orange {
+  border: 2px solid white;
   background: orange;
   color: white;
   font-weight: 800;
 }
 
+.table__button--orange:hover {
+  border: 2px solid orange;
+  background: white;
+  color: orange;
+  font-weight: 800;
+}
+
 .table__button--blue {
+  border: 2px solid white;
   background: cornflowerblue;
   color: white;
   font-weight: 800;
 }
+
+.table__button--blue:hover {
+  border: 2px solid cornflowerblue;
+  background: white;
+  color: cornflowerblue;
+  font-weight: 800;
+}
+
+
 
 /* Quote */
 
@@ -141,4 +160,39 @@ body {
   line-height: 0;
   bottom: 0;
   right: 0;
+}
+
+
+/* Click To Book Flights button */
+
+.callout {
+  display: block;
+  width: 20rem;
+  margin: 3rem auto;
+  border: 3px solid white;
+  border-radius: 2rem;
+  height: 3rem;
+  text-transform: uppercase;
+  background: black;
+  color: white;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.callout:hover {
+  background: white;
+  color: black;
+  border: 3px solid black;
+}
+
+
+@media screen and (max-width: 700px){
+  html{
+    font-size: .8rem;
+  }
+
+  .table__header {
+    font-size: 1rem;
+  }
+
 }
