@@ -1,3 +1,4 @@
 module.exports = {
-  "extends": "eslint-config-semistandard"
+  "extends": "eslint-config-semistandard",
+  "envs": ["browser", "node"]
 }
