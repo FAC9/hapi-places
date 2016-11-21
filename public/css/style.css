@@ -30,5 +30,77 @@ body {
   color: white;
   font-family: 'Futura', 'Didact Gothic', sans-serif;
   font-size: 5rem;
+  letter-spacing: 2rem;
   z-index: 2;
+}
+
+/** TABLE **/
+
+.table {
+  width: 100%;
+  display: table;
+  max-width: 1200px;
+  margin: 1rem auto;
+  border: 5px solid black;
+  border-collapse: collapse;
+}
+
+.table__row {
+  height: 4rem;
+}
+
+.table__cell {
+  text-align: center;
+  width: 30%;
+  border-right: 2px solid lightgray;
+}
+
+
+/* Table Header */
+
+.table__header {
+  font-size: 2rem;
+  font-family: 'Futura', 'Didact Gothic', sans-serif;
+  letter-spacing: 1rem;
+  border: 2px solid lightgray;
+}
+
+
+/* Table Property */
+
+.table__property {
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/* Table Value */
+
+.table__value {
+  letter-spacing: 3px;
+}
+
+
+
+
+/* Table Button */
+
+.table__button {
+  display: inline-block;
+  margin: .25rem;
+  padding: .5rem;
+  border-radius: 10px;
+  width: 6rem;
+  cursor: pointer;
+}
+
+.table__button--orange {
+  background: orange;
+  color: white;
+  font-weight: 800;
+}
+
+.table__button--blue {
+  background: cornflowerblue;
+  color: white;
+  font-weight: 800;
 }
