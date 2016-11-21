@@ -18,6 +18,7 @@
   "homepage": "https://github.com/FAC9/hapi-places#readme",
   "dependencies": {
     "hapi": "^15.2.0",
+    "inert": "^4.0.2",
     "joi": "^10.0.1"
   },
   "devDependencies": {
