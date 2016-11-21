@@ -104,3 +104,41 @@ body {
   color: white;
   font-weight: 800;
 }
+
+/* Quote */
+
+.quote__container {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.quote {
+  quotes: "“" "”" "‘" "’";
+  display: block;
+  text-align: center;
+  margin: 6rem auto;
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 3rem;
+  position: relative;
+}
+.quote:before {
+  content: open-quote;
+  font-size: 8rem;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.quote:after {
+  content: close-quote;
+  font-size: 8rem;
+  position: absolute;
+  line-height: 0;
+  bottom: 0;
+  right: 0;
+}
