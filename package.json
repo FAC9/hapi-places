@@ -1,0 +1,31 @@
+{
+  "name": "hapi-places",
+  "version": "1.0.0",
+  "description": "hapi project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC9/hapi-places.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC9/hapi-places/issues"
+  },
+  "homepage": "https://github.com/FAC9/hapi-places#readme",
+  "dependencies": {
+    "hapi": "^15.2.0",
+    "joi": "^10.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-semistandard": "^7.0.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-standard": "^2.0.1"
+  }
+}
