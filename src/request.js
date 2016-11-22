@@ -6,8 +6,8 @@ function nomadUrlBuilder (query) {
   return `${nomad}${query}`;
 }
 
-function wikiUrlBuilder (query) {
-  return `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&titles=${query}&format=json`;
+function wikiUrlBuilder (city) {
+  return `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&titles=${city}&format=json`;
 }
 
 function nomadRequest (query, cb) {
@@ -22,12 +22,20 @@ function nomadRequest (query, cb) {
   });
 }
 
-function wikiRequest (query, cb) {
-  Req(wikiUrlBuilder(query), (err, res, body) => {
+function wikiRequest (city, cb) {
+  Req(wikiUrlBuilder(city), (err, res, body) => {
     if (err) {
       cb(err);
     } else if (JSON.parse(body).query.pages[-1]) {
-      cb('Invalid data returned', null);
+      wikiUrlBuilder(city, (err, res, body) => {
+        if (err) {
+          cb(err);
+        } else if (JSON.parse(body).query.pages[-1]) {
+          cb('Invalid data returned', null);
+        } else {
+          cb(null, body);
+        }
+      });
     } else {
       cb(null, body);
     }
