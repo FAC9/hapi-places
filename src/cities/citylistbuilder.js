@@ -8,5 +8,5 @@ fs.readFile(path.join(__dirname, 'citiesraw.json'), 'utf8', function (err, data)
   array = array.map(function (c, i, a) {
     return `'${c.info.city.url}'`;
   });
-  fs.writeFile(path.join(__dirname, 'citylist.js'), array, 'utf8');
+  fs.writeFile(path.join(__dirname, 'citylist.js'), 'module.exports = ' + array, 'utf8');
 });
