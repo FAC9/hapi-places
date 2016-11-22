@@ -9,7 +9,12 @@ let parts = {
   coffee: 'coffee_in_cafe&f1_type=lt&f1_max='
 };
 
+var convertData = {
+  safety: function (value) { return value / 20; }
+};
+
 function makeUrl (type, val) {
+  if (convertData[type]) { val = convertData[type](val); }
   return `${firstPart}${parts[type]}${val}`;
 }
 
