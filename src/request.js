@@ -1,6 +1,7 @@
 const Req = require('request');
 
 function nomadUrlBuilder (query) {
+  query = (query[0] === '/') ? query.slice(1) : query;
   const nomad = 'https://nomadlist.com/api/v2/list/cities/';
   return `${nomad}${query}`;
 }
@@ -23,9 +24,17 @@ function wikiRequest (query, cb) {
   });
 }
 
+function generalRequest (url, cb) {
+  Req(url, (err, res, body) => {
+    if (err) { throw err; }
+    cb(null, body);
+  });
+}
+
 module.exports = {
-  nomad: nomadRequest,
-  wiki: wikiRequest,
-  wikiUrl: wikiUrlBuilder,
-  nomadUrl: nomadUrlBuilder
+  nomadRequest,
+  wikiRequest,
+  generalRequest,
+  wikiUrlBuilder,
+  nomadUrlBuilder
 };
