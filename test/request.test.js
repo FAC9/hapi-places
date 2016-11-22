@@ -2,7 +2,7 @@ const tape = require('tape');
 const req = require('../src/request.js');
 
 tape('testing url builder functions correctly concatenate urls', function (t) {
-  t.ok(req.wikiUrlBuilder('horse') === 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&titles=horse&format=json', 'It should correctly format query string');
+  t.ok(req.wikiUrlBuilder('london') === 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&titles=london&format=json', 'It should correctly format query string');
   t.ok(req.nomadUrlBuilder('/amsterdam-netherlands') === 'https://nomadlist.com/api/v2/list/cities/amsterdam-netherlands', 'It should correctly format query string');
   t.end();
 });
@@ -49,13 +49,13 @@ tape('testing request function for Nomad API should throw error when incorrect u
 
 // Wikipedia
 tape('testing request function for wikipedia API when passed london returns JSON', function (t) {
-  req.wikiRequest('London', (err, data) => {
+  req.wikiRequest('George Town', (err, data) => {
     if (err) { t.error(); }
     t.ok(data, 'We should have recieved data!');
     t.ok(typeof data === 'string', 'Our data should be a string... of JSON!');
     let parsed = JSON.parse(data);
     let result = parsed.query.pages[Object.keys(parsed.query.pages)[0]].title;
-    t.ok(result, 'should return useful information');
+    t.ok(result, 'Should return useful information');
     t.end();
   });
 });

@@ -4,8 +4,8 @@
   "description": "hapi project",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test/frontend_test.js && node ./test/request.test.js && node ./test/server.test.js && node ./test/wikitest.js",
-    "start": "node ./src/starter.js"
+    "test": "node ./test/backend_test.js",
+    "start": "nodemon ./src/starter.js"
   },
   "repository": {
     "type": "git",
