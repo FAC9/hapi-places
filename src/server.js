@@ -6,16 +6,22 @@ const inert = require('inert');
 const routes = require('./routes.js');
 
 server.connection({
-  port: 8000
+  port: 8000,
+  routes: {
+    files: {
+      relativeTo: path.join(__dirname, '../public')
+    }
+  }
 });
 
 server.register([inert, vision], (err) => {
   if (err) console.log(err);
   server.views({
     engines: {
-      html: require('handlebars')
+      hbs: require('handlebars')
     },
-    path: path.join(__dirname, '../public/views')
+    relativeTo: __dirname,
+    path: '../public/views'
   });
 
   server.route(routes);

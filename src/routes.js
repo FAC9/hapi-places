@@ -1,10 +1,21 @@
+
 module.exports = [
 
   {
     method: 'GET',
     path: '/',
     handler: (req, rep) => {
-      rep.view('index.html', {price: 5000});
+  //    let schema getdata()
+      const schema = {
+        city: 'MADRID',
+        cost: '$1000',
+        temp: '30C',
+        internet: 'good',
+        air: '78%',
+        coffee: '$2',
+        description: 'Madrid, what a town. A hell of a town. A town that never slows down ;)'
+      };
+      rep.view('index', schema);
     }
   },
   {
@@ -12,7 +23,7 @@ module.exports = [
     path: '/{path*}',
     handler: {
       directory: {
-        path: '../public/'
+        path: '.'
       }
     }
   }
