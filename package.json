@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FAC9/hapi-places#readme",
   "dependencies": {
+    "handlebars": "^4.0.6",
     "hapi": "^15.2.0",
     "inert": "^4.0.2",
     "joi": "^10.0.1"
@@ -27,6 +28,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.7.1",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint-plugin-standard": "^2.0.1",
+    "tape": "^4.6.3"
   }
 }
