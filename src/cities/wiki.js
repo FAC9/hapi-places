@@ -1,5 +1,5 @@
 function parseWiki (city) {
-  city = JSON.parse(city);
+  if (typeof city !== 'object') city = JSON.parse(city);
   var html = Object.keys(city.query.pages).map((item) => { return city.query.pages[item]; })[0].extract;
   // var html = Object.values(city.query.pages)[0].extract;
   html = html.replace(/<(.|\n)*?>/g, '');

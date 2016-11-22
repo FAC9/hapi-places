@@ -1,5 +1,5 @@
 function getValues (json) {
-  json = JSON.parse(json);
+  if (typeof json !== 'object') json = JSON.parse(json);
   var returnObj = {};
   returnObj.city = `${json.result[0].info.city.name}`;
   returnObj.country = `${json.result[0].info.country.name}`;
