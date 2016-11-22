@@ -28,8 +28,8 @@ module.exports = [
         city: 'MADRID',
         cost: '$1000',
         temp: '30C',
-        internet: 'good',
-        air: '78%',
+        internet: '40mbps',
+        safety: '79%',
         coffee: '$2',
         description: 'Madrid, what a town. A hell of a town. A town that never slows down ;)',
         wiki: 'https://wikipedia.org'

@@ -23,31 +23,31 @@
   <tr class="table__row">
     <td class="table__cell table__property">COST PER MONTH</td>
     <td class="table__cell table__value">{{#if cost}}{{cost}}{{else}}${{/if}}</td>
-    <td class="table__cell table__button-container"><a href='/cheaper' class="table__button table__button--orange">CHEAPER</a></td>
+    <td class="table__cell table__button-container"><a href='/cheaper' name='living_cost' class="table__button table__button--orange">CHEAPER</a></td>
   </tr>
 
   <tr class="table__row">
-    <td class="table__cell table__property">TEMPERATE</td>
+    <td class="table__cell table__property">TEMPERATURE</td>
     <td class="table__cell table__value">{{#if temp}}{{temp}}{{else}}C{{/if}}</td>
-    <td class="table__cell table__button-container"><span class="table__button table__button--blue">COLDER</span><span class="table__button table__button--orange">WARMER</span></td>
+    <td class="table__cell table__button-container"><a href='/colder' name='temp-colder' class="table__button table__button--blue">COLDER</a><a href='/warmer' name='temp-warmer' class="table__button table__button--orange">WARMER</a></td>
   </tr>
 
   <tr class="table__row">
     <td class="table__cell table__property">INTERNET QUALITY</td>
     <td class="table__cell table__value">{{#if internet}}{{internet}}{{else}}{{???}}{{/if}}</td>
-    <td class="table__cell table__button-container"><span class="table__button table__button--orange">FASTER</span></td>
+    <td class="table__cell table__button-container"><a href='/faster' name='internet' class="table__button table__button--orange">FASTER</a></td>
   </tr>
 
   <tr class="table__row">
-    <td class="table__cell table__property">AIR QUALITY</td>
-    <td class="table__cell table__value">{{#if air}}{{air}}{{else}}{{???}}{{/if}}</td>
-    <td class="table__cell table__button-container"><span class="table__button table__button--orange">BETTER</span></td>
+    <td class="table__cell table__property">SAFETY</td>
+    <td class="table__cell table__value">{{#if safety}}{{safety}}{{else}}{{???}}{{/if}}</td>
+    <td class="table__cell table__button-container"><a href='/cheaper' name='safety' class="table__button table__button--orange">SAFER</a></td>
   </tr>
 
   <tr class="table__row">
     <td class="table__cell table__property">AVERAGE COFFEE PRICE</td>
     <td class="table__cell table__value">{{#if coffee}}{{coffee}}{{else}}{{???}}{{/if}}</td>
-    <td class="table__cell table__button-container"><span class="table__button table__button--orange">CHEAPER</span></td>
+    <td class="table__cell table__button-container"><a href='/cheaper' name='coffee' class="table__button table__button--orange">CHEAPER</a></td>
   </tr>
 
 </table>
@@ -57,5 +57,5 @@
 </section>
 
 <button class="callout">Click To Book Flights</button>
-
+<script src='js/main.js'></script>
 </body>
