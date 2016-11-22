@@ -23,7 +23,7 @@
   <tr class="table__row">
     <td class="table__cell table__property">COST PER MONTH</td>
     <td class="table__cell table__value">{{#if cost}}{{cost}}{{else}}${{/if}}</td>
-    <td class="table__cell table__button-container"><span class="table__button table__button--orange">CHEAPER</span></td>
+    <td class="table__cell table__button-container"><a href='/cheaper' class="table__button table__button--orange">CHEAPER</a></td>
   </tr>
 
   <tr class="table__row">
@@ -53,7 +53,7 @@
 </table>
 
 <section class="quote__container">
-  <p class="quote">{{#if description}}{{description}}{{else}}{{description}}{{/if}}</p>
+  <a href="{{wiki}}" class="quote">{{#if description}}{{description}}{{else}}{{description}}{{/if}}</a>
 </section>
 
 <button class="callout">Click To Book Flights</button>
