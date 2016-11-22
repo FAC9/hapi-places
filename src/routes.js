@@ -39,6 +39,18 @@ module.exports = [
   },
   {
     method: 'GET',
+    path: '/request',
+    handler: (req, rep) => {
+      let qType = req.query.type;
+      let qValu = req.query.value;
+      let url =
+      Req.generalRequest(url, (err, data) => {
+        rep.view('index', schema);
+      })
+    }
+  },
+  {
+    method: 'GET',
     path: '/{path*}',
     handler: {
       directory: {
