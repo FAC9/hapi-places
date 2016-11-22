@@ -5,6 +5,11 @@
   user-select: none;
 }
 
+a {
+    text-transform: none !important;
+    color: black;
+}
+
 html {
   font-size: 1rem;
 }
