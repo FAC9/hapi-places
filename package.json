@@ -19,7 +19,8 @@
   "dependencies": {
     "hapi": "^15.2.0",
     "inert": "^4.0.2",
-    "joi": "^10.0.1"
+    "joi": "^10.0.1",
+    "tape": "^4.6.3"
   },
   "devDependencies": {
     "eslint": "^3.10.2",
