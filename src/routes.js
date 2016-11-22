@@ -1,11 +1,5 @@
 const cityDataBuilder = require('./citydatabuilder');
-
-// define routes
-// /cost-cheaper
-// /temp-warmer
-// /internet-faster
-// /air-better
-// /coffee-cheaper
+const custom = require('./custom-requests.js');
 module.exports = [
 
   {
@@ -13,6 +7,23 @@ module.exports = [
     path: '/',
     handler: (req, rep) => {
       cityDataBuilder('', (err, schema) => {
+        if (err) {
+          throw err;
+        } else {
+          rep.view('index', schema);
+        }
+      });
+    }
+  },
+  {
+    method: 'GET',
+    path: '/request',
+    handler: (req, rep) => {
+      let qType = req.query.type;
+      let qValue = req.query.value;
+      let nomadUrl = custom(qType, qValue);
+      console.log(nomadUrl);
+      cityDataBuilder(nomadUrl, (err, schema) => {
         if (err) {
           throw err;
         } else {

@@ -3,9 +3,9 @@ const getData = require('./cities/getdata');
 const Req = require('./request');
 const wikiParse = require('./cities/wiki');
 
-function cityDataBuilder (url, cb) {
+function cityDataBuilder (url, cb, cities = cityList) {
   if (!url) {
-    let city = cityList[Math.floor(Math.random() * cityList.length)];
+    let city = cities[Math.floor(Math.random() * cities.length)];
     Req.nomadRequest(city, (err, data) => {
       if (err) {
         cb(err);
@@ -22,6 +22,15 @@ function cityDataBuilder (url, cb) {
           }
         });
       }
+    });
+  } else {
+    let customCityList = [];
+    Req.generalRequest(url, (err, data) => {
+      if (err) {
+        throw err;
+      }
+      customCityList = JSON.parse(data).slugs;
+      cityDataBuilder('', cb, customCityList);
     });
   }
   // else do similar, but something like this....
