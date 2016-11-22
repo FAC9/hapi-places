@@ -7,3 +7,8 @@ tape('check that we return the description of the city as a string', function (t
   t.equal(city_obj(city), extract, 'returns correct extract');
   t.end();
 });
+
+// tape('check that we return the description of the city as a string', function (t) {
+//   t.equal(typeof city_obj(city), 'string');
+//   t.end();
+// });
