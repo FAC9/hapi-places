@@ -25,10 +25,5 @@ server.register([inert, vision], (err) => {
   });
 
   server.route(routes);
-
-  server.start((err) => {
-    if (err) console.log(err);
-    console.log(`server running`);
-  });
 });
 module.exports = server;
