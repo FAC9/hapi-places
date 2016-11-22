@@ -22,3 +22,8 @@ tape('check that getdata functionr returns an object', (t) => {
   t.equal(getData(amsterdamJson).internetSpeed, '10 MBPS', 'internet spped correct');
   t.end();
 });
+
+// tape('check that we return the description of the city as a string', function (t) {
+//   t.equal(typeof city_obj(city), 'string');
+//   t.end();
+// });
