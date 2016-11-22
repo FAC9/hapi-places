@@ -10,7 +10,7 @@
 <body>
 
 <header class="header" style="background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://nomadlist.com/assets/img/cities/madrid-spain-1500px.jpg') no-repeat center;">
-  <h1 class="header__title">MADRID</h1>
+  <h1 class="header__title">{{city}}</h1>
 </header>
 
 <table class="table">
@@ -22,38 +22,38 @@
 
   <tr class="table__row">
     <td class="table__cell table__property">COST PER MONTH</td>
-    <td class="table__cell table__value">$1500</td>
+    <td class="table__cell table__value">{{#if cost}}{{cost}}{{else}}${{/if}}</td>
     <td class="table__cell table__button-container"><span class="table__button table__button--orange">CHEAPER</span></td>
   </tr>
 
   <tr class="table__row">
     <td class="table__cell table__property">TEMPERATE</td>
-    <td class="table__cell table__value">20C</td>
+    <td class="table__cell table__value">{{#if temp}}{{temp}}{{else}}C{{/if}}</td>
     <td class="table__cell table__button-container"><span class="table__button table__button--blue">COLDER</span><span class="table__button table__button--orange">WARMER</span></td>
   </tr>
 
   <tr class="table__row">
     <td class="table__cell table__property">INTERNET QUALITY</td>
-    <td class="table__cell table__value">GOOD</td>
+    <td class="table__cell table__value">{{#if internet}}{{internet}}{{else}}{{???}}{{/if}}</td>
     <td class="table__cell table__button-container"><span class="table__button table__button--orange">FASTER</span></td>
   </tr>
 
   <tr class="table__row">
     <td class="table__cell table__property">AIR QUALITY</td>
-    <td class="table__cell table__value">70%</td>
+    <td class="table__cell table__value">{{#if air}}{{air}}{{else}}{{???}}{{/if}}</td>
     <td class="table__cell table__button-container"><span class="table__button table__button--orange">BETTER</span></td>
   </tr>
 
   <tr class="table__row">
     <td class="table__cell table__property">AVERAGE COFFEE PRICE</td>
-    <td class="table__cell table__value">$2</td>
+    <td class="table__cell table__value">{{#if coffee}}{{coffee}}{{else}}{{???}}{{/if}}</td>
     <td class="table__cell table__button-container"><span class="table__button table__button--orange">CHEAPER</span></td>
   </tr>
 
 </table>
 
 <section class="quote__container">
-  <p class="quote">Madrid is the capital of Spain, and the largest municipality of the Community of Madrid. The population of the city is almost 3.2 million with a metropolitan area population of approximately 6.5 million. It is the third-largest city in the European Union, after London and Berlin, and its metropolitan area is the third-largest in the European Union after London and Paris. Located in south-western Europe, the city spans a total of 604.3 km2</p>
+  <p class="quote">{{#if description}}{{description}}{{else}}{{description}}{{/if}}</p>
 </section>
 
 <button class="callout">Click To Book Flights</button>
