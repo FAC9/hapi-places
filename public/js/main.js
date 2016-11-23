@@ -1,16 +1,16 @@
-document.querySelectorAll('.table__button').forEach((button) => {
-  let requestType = button.name;
-  // regexp to filter out  numbers from E.g Ł 1,000.23.
-  // The match only matches the number (which has commas as thousands separators and it can have a decimal point to).
-  //  Replace gets rid of the pound sign and the comma.
-  let requestValue = (button.parentElement.previousElementSibling.textContent).match(/\d+(\.?,?\d+){0,1}/
-)[0].replace(',', '');
-
-  let requestURL = `/request?type=${requestType}&value=${requestValue}`;
-  button.href = requestURL;
-});
-
 (function () {
+  document.querySelectorAll('.table__button').forEach((button) => {
+    let requestType = button.name;
+    // regexp to filter out  numbers from E.g Ł 1,000.23.
+    // The match only matches the number (which has commas as thousands separators and it can have a decimal point to).
+    //  Replace gets rid of the pound sign and the comma.
+    let requestValue = (button.parentElement.previousElementSibling.textContent).match(/\d+(\.?,?\d+){0,1}/
+  )[0].replace(',', '');
+
+    let requestURL = `/request?type=${requestType}&value=${requestValue}`;
+    button.href = requestURL;
+  });
+
   var header = document.querySelector('.header');
   var ticking = false;
 
