@@ -38,3 +38,5 @@ jspm_packages
 
 .DS_Store
 /public/.DS_Store
+
+config.env

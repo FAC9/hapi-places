@@ -22,7 +22,6 @@ module.exports = [
       let qType = req.query.type;
       let qValue = req.query.value;
       let nomadUrl = custom(qType, qValue);
-      console.log(nomadUrl);
       cityDataBuilder(nomadUrl, (err, schema) => {
         if (err) {
           throw err;
