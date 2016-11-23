@@ -20,7 +20,7 @@
   <tr class="table__row">
     <th class="table__cell table__header">STAT</th>
     <th class="table__cell table__header">RATING</th>
-    <th class="table__cell table__header table__header--blue">I NEED</th>
+    <th class="table__cell table__header table__header--blue">FIND SOMEWHERE</th>
   </tr>
 
   <tr class="table__row">
@@ -56,10 +56,12 @@
 
 </table>
 
+<p class="quote__header .header__title">READ MORE</p>
 <section class="quote__container">
-  <a href="{{wiki}}" class="quote">{{#if description}}{{description}}{{else}}{{description}}{{/if}}</a>
+  <a href="{{wiki}}" class="quote">{{#if description}}{{description}}<br><em>Text courtesy of Wikipedia</em>{{else}}{{description}}{{/if}}</a>
+
 </section>
 
-<button class="callout">Click To Book Flights</button>
+<button class="callout">Click To Book Flights&nbsp;>></button>
 <script src='js/main.js'></script>
 </body>
