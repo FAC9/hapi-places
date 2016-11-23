@@ -22,6 +22,8 @@ A site that generates a profile for a random city, to provide users with useful 
 
 # User Stories
 
+Our site is for digital nomads looking for their new dream country based on multiple selection criteria.
+
 As a user;
 - When I first navigate to the site I am presented with information about a random city. When I refresh the page, I am presented with information about a new random city.
 - At the top of the page I should see an image of the random city.
