@@ -199,12 +199,14 @@ body {
   margin: 3rem auto;
   border: 3px solid white;
   border-radius: 2rem;
-  height: 3rem;
+  padding: 1rem;
+  line-height: 10px;
   text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
   background: black;
   color: white;
   transition: all .2s ease;
-  cursor: pointer;
 }
 
 .callout:hover {

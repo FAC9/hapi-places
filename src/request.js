@@ -42,6 +42,13 @@ function wikiRequest (city, cb) {
   });
 }
 
+function lookupIsoCode (countryName) {
+  const codes = require('./countries.js');
+  let country = codes.find(cn => cn['Name'] === countryName);
+  let isoCode = (country['Code'] || '');
+  return isoCode.toLowerCase();
+}
+
 function generalRequest (url, cb) {
   Req(url, (err, res, body) => {
     if (err) { throw err; }
@@ -54,5 +61,6 @@ module.exports = {
   wikiRequest,
   generalRequest,
   wikiUrlBuilder,
-  nomadUrlBuilder
+  nomadUrlBuilder,
+  lookupIsoCode
 };
