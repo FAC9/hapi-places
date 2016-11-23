@@ -109,7 +109,7 @@ tape('check that getdata functionr returns an object', (t) => {
   t.equal(getData(amsterdamJson).city, 'Amsterdam', 'city name correct');
   t.equal(getData(amsterdamJson).country, 'Netherlands', 'country name correct');
   t.equal(getData(amsterdamJson).coffee, '$3.74');
-  t.equal(getData(amsterdamJson).cost, '$3274');
+  t.equal(getData(amsterdamJson).cost, '$3,274');
   t.equal(getData(amsterdamJson).temp, '12°C');
   t.equal(getData(amsterdamJson).image, 'https://nomadlist.com/assets/img/cities/amsterdam-netherlands-1500px.jpg');
   t.equal(getData(amsterdamJson).safety, '80%');
