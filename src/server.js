@@ -6,7 +6,7 @@ const inert = require('inert');
 const routes = require('./routes.js');
 
 server.connection({
-  port: 8000,
+  port: process.env.PORT || 8000,
   routes: {
     files: {
       relativeTo: path.join(__dirname, '../public')
