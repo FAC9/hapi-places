@@ -26,6 +26,8 @@ function cityDataBuilder (url, cb, cities = cityList) {
           } else {
             schema.description = wikiParse(data);
             schema.wiki = 'https://en.wikipedia.org/wiki/' + city.replace(' ', '_');
+            schema.flightsLink = `http://www.skyscanner.net/transport/flights/uk/${Req.lookupIsoCode(schema.country)}/`;
+            console.log(schema.flightsLink);
             cb(null, schema);
           }
         });
