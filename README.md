@@ -1,5 +1,5 @@
--[![Build Status](https://travis-ci.org/FAC9/hapi-places.svg?branch=master)](https://travis-ci.org/FAC9/hapi-places)
- -[![codecov](https://codecov.io/gh/FAC9/hapi-places/branch/master/graph/badge.svg)](https://codecov.io/gh/FAC9/hapi-places)
+[![Build Status](https://travis-ci.org/FAC9/hapi-places.svg?branch=master)](https://travis-ci.org/FAC9/hapi-places)
+[![codecov](https://codecov.io/gh/FAC9/hapi-places/branch/master/graph/badge.svg)](https://codecov.io/gh/FAC9/hapi-places)
 
 # Hapi Places
 
