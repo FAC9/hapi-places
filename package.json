@@ -4,9 +4,9 @@
   "description": "hapi project",
   "main": "src/starter.js",
   "scripts": {
-    "test": "node ./test/backend_test.js",
+    "test": "node ./test/index.test.js",
     "start": "node ./src/starter.js",
-    "coverage": "./node_modules/.bin/istanbul cover test/backend_test.js && istanbul report lcov && codecov",
+    "coverage": "./node_modules/.bin/istanbul cover test/index.test.js && istanbul report lcov && codecov",
     "codecov": "source config.env && ./node_modules/.bin/codecov -t $CODECOV_TOKEN"
   },
   "repository": {

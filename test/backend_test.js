@@ -10,7 +10,7 @@ function test () {
   tape('Testing whether the server is running at localhost', function (t) {
     server.start((err) => {
       if (err) t.error();
-      else t.pass();
+      else t.pass('server should run on local host');
       server.stop(() => {
         t.end();
       });
@@ -105,12 +105,23 @@ function test () {
     t.end();
   });
 
+  tape('testing cityImageCheck can take an image url, and if it cannot be found, request a new url', function (t) {
+    t.equal(req.nomadCountryUrlBuilder('China'), 'https://nomadlist.com/api/v2/list/countries/china', 'returns concatenated string');
+    req.cityImageCheck('https://nomadlist.com/assets/img/cities/china-1500px.jpg', 'china', function (d) {
+      t.ok(d === 'https://nomadlist.com/assets/img/cities/xian-china-1500px.jpg', 'returns a new url');
+    });
+    req.cityImageCheck('https://nomadlist.com/assets/img/cities/xian-china-1500px.jpg', 'china', function (d) {
+      t.ok(d === 'https://nomadlist.com/assets/img/cities/xian-china-1500px.jpg', 'returns the same url if found');
+    });
+    t.end();
+  });
+
   tape('check that getdata functionr returns an object', (t) => {
     t.ok(typeof getData(amsterdamJson) === 'object', 'function returns an object');
     t.equal(getData(amsterdamJson).city, 'Amsterdam', 'city name correct');
     t.equal(getData(amsterdamJson).country, 'Netherlands', 'country name correct');
     t.equal(getData(amsterdamJson).coffee, '£3.01');
-    t.equal(getData(amsterdamJson).cost, '£2638.47');
+    t.equal(getData(amsterdamJson).cost, '£2,638.47');
     t.equal(getData(amsterdamJson).temp, '12°C');
     t.equal(getData(amsterdamJson).image, 'https://nomadlist.com/assets/img/cities/amsterdam-netherlands-1500px.jpg');
     t.equal(getData(amsterdamJson).safety, '80%');
