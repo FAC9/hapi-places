@@ -1,3 +1,6 @@
+-[![Build Status](https://travis-ci.org/FAC9/hapi-places.svg?branch=master)](https://travis-ci.org/FAC9/hapi-places)
+ -[![codecov](https://codecov.io/gh/FAC9/hapi-places/branch/master/graph/badge.svg)](https://codecov.io/gh/FAC9/hapi-places)
+
 # Hapi Places
 
 A site that generates a profile for a random city, to provide users with useful information about living conditions. This project is for us to learn about building servers with Hapi, rendering templates with Handlebars on the server side, practicing testing with Istanbul and Tape, and generating API calls. The two apis we are using are;
