@@ -75,7 +75,7 @@ body {
 
 /* Table Header */
 
-.table__header {
+.table__header  {
   font-size: 1.5rem;
   font-family: 'Futura', 'Didact Gothic', sans-serif;
   letter-spacing: 1rem;
@@ -151,6 +151,14 @@ body {
   margin: 0 auto;
   text-align: center;
   position: relative;
+}
+
+.quote__header {
+  margin-top: 40px;
+  font-size: 1.5rem;
+  font-family: 'Futura', 'Didact Gothic', sans-serif;
+  letter-spacing: 1rem;
+  text-align: center;
 }
 
 .quote {

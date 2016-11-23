@@ -5,7 +5,9 @@
   "main": "src/starter.js",
   "scripts": {
     "test": "node ./test/backend_test.js",
-    "start": "node ./src/starter.js"
+    "start": "node ./src/starter.js",
+    "coverage": "./node_modules/.bin/istanbul cover test/backend_test.js && istanbul report lcov && codecov",
+    "codecov": "source config.env && ./node_modules/.bin/codecov -t $CODECOV_TOKEN"
   },
   "repository": {
     "type": "git",
@@ -30,12 +32,15 @@
     "vision": "^4.1.0"
   },
   "devDependencies": {
+    "codecov": "^1.0.1",
+    "env2": "^2.1.1",
     "eslint": "^3.10.2",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.7.1",
     "eslint-plugin-standard": "^2.0.1",
+    "istanbul": "^0.4.5",
     "tape": "^4.6.3"
   }
 }
