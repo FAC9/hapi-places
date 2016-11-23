@@ -1,6 +1,7 @@
 # Hapi Places
+[![Build Status](https://travis-ci.org/FAC9/hapi-places.svg?branch=master)](https://travis-ci.org/FAC9/hapi-places)
 
-Hapi Places will be a dynamic web application that generates a profile for a random city, providing user with useful information about living conditions and a number of other factors that might influence their decision to relocate. 
+Hapi Places will be a dynamic web application that generates a profile for a random city, providing user with useful information about living conditions and a number of other factors that might influence their decision to relocate.
 
 The reason behind the project is for our team to learn about building servers with Hapi, rendering templates with Handlebars on the server side, practising testing with Istanbul and Tape, and generating API calls. The two apis we are using are:
 - [Nomadlist](https://nomadlist.com/faq)
