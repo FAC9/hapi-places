@@ -20,14 +20,17 @@ function cityDataBuilder (url, cb, cities = cityList) {
       } else {
         let schema = getData(data);
         let city = schema.city;
-        Req.wikiRequest(city, (err, data) => {
-          if (err) {
-            cb(err);
-          } else {
-            schema.description = wikiParse(data);
-            schema.wiki = 'https://en.wikipedia.org/wiki/' + city.replace(' ', '_');
-            cb(null, schema);
-          }
+        Req.cityImageCheck(schema.image, schema.country, function (img) {
+          schema.image = img || schema.image;
+          Req.wikiRequest(city, (err, data) => {
+            if (err) {
+              cb(err);
+            } else {
+              schema.description = wikiParse(data);
+              schema.wiki = 'https://en.wikipedia.org/wiki/' + city.replace(' ', '_');
+              cb(null, schema);
+            }
+          });
         });
       }
     });

@@ -9,6 +9,7 @@ function getValues (json) {
   returnObj.image = `https://nomadlist.com${json.result[0].media.image['1500']}`;
   returnObj.safety = `${(json.result[0].scores.safety) * 100}%`;
   returnObj.internet = `${json.result[0].info.internet.speed.download} MBPS`;
+
   return returnObj;
 }
 

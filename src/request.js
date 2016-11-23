@@ -21,6 +21,28 @@ function nomadRequest (query, cb) {
     }
   });
 }
+function cityImageCheck (currentImgUrl, country, cb) {
+  Req(currentImgUrl, (err, res, body) => {
+    if (err) cb(null);
+    else if (res.statusCode >= 400) {
+      Req(`https://nomadlist.com/api/v2/list/countries/${country.toLowerCase()}`, (err, res, newBody) => {
+        if (err) cb(null);
+        else {
+          let parsedResponse = JSON.parse(newBody);
+          let newImg = `https://nomadlist.com/${parsedResponse.result[0].media.image['1500']}`;
+          console.log('No Image Available, replaced with Country image at: ', newImg);
+          cb(newImg);
+        }
+      });
+    } else {
+      cb(currentImgUrl);
+    }
+  });
+}
+
+// cityImageCheck('https://nomadlist.com/assets/img/cities/china-1500px.jpg', 'china', function (data) {
+//   console.log(data);
+// });
 
 function wikiRequest (city, cb) {
   Req(wikiUrlBuilder(city), (err, res, body) => {
@@ -54,5 +76,6 @@ module.exports = {
   wikiRequest,
   generalRequest,
   wikiUrlBuilder,
-  nomadUrlBuilder
+  nomadUrlBuilder,
+  cityImageCheck
 };
