@@ -98,6 +98,17 @@ tape('testing request function for Wikipedia API should throw error when incorre
   t.end();
 });
 
+tape('testing cityImageCheck can take an image url, and if it cannot be found, request a new url', function (t) {
+  t.equal(req.nomadCountryUrlBuilder('China'), 'https://nomadlist.com/api/v2/list/countries/china', 'returns concatenated string');
+  req.cityImageCheck('https://nomadlist.com/assets/img/cities/china-1500px.jpg', 'china', function (d) {
+    t.ok(d === 'https://nomadlist.com/assets/img/cities/xian-china-1500px.jpg', 'returns a new url');
+  });
+  req.cityImageCheck('https://nomadlist.com/assets/img/cities/xian-china-1500px.jpg', 'china', function (d) {
+    t.ok(d === 'https://nomadlist.com/assets/img/cities/xian-china-1500px.jpg', 'returns the same url if found');
+  });
+  t.end();
+});
+
 tape('check that we return the description of the city as a string', function (t) {
   let extract = 'Madrid (/məˈdrɪd/, Spanish: [maˈðɾið], locally: [maˈðɾiθ, -ˈðɾi]) is the capital of Spain, and the largest municipality of the Community of Madrid. The population of the city is almost 3.2 million with a metropolitan area population of approximately 6.5 million. It is the third-largest city in the European Union, after London and Berlin, and its metropolitan area is the third-largest in the European Union after London and Paris.';
   t.equal(city_obj(madridWiki), extract, 'returns correct extract');
