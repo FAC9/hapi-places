@@ -6,6 +6,10 @@ function nomadUrlBuilder (query) {
   return `${nomad}${query}`;
 }
 
+function nomadCountryUrlBuilder (country) {
+  return 'https://nomadlist.com/api/v2/list/countries/' + country.toLowerCase();
+}
+
 function wikiUrlBuilder (city) {
   return `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&titles=${city}&format=json`;
 }
@@ -18,6 +22,23 @@ function nomadRequest (query, cb) {
       cb('Invalid data returned', null);
     } else {
       cb(null, body);
+    }
+  });
+}
+function cityImageCheck (currentImgUrl, country, cb) {
+  Req(currentImgUrl, (err, res) => {
+    if (err) cb(null);
+    else if (res.statusCode >= 400) {
+      Req(nomadCountryUrlBuilder(country), (err, res, body) => {
+        if (err) cb(null);
+        else {
+          let parsed = JSON.parse(body);
+          let newImg = `https://nomadlist.com${parsed.result[0].media.image['1500']}`;
+          cb(newImg);
+        }
+      });
+    } else {
+      cb(currentImgUrl);
     }
   });
 }
@@ -58,9 +79,11 @@ function generalRequest (url, cb) {
 
 module.exports = {
   nomadRequest,
+  nomadCountryUrlBuilder,
   wikiRequest,
   generalRequest,
   wikiUrlBuilder,
   nomadUrlBuilder,
+  cityImageCheck,
   lookupIsoCode
 };
