@@ -1,3 +1,5 @@
+'use strict';
+
 const hapi = require('hapi');
 const vision = require('vision');
 const path = require('path');
