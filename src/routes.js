@@ -17,7 +17,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/request',
+    path: '/w',
     handler: (req, rep) => {
       let qType = req.query.type;
       let qValue = req.query.value;
