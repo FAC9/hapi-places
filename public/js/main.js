@@ -17,7 +17,7 @@ document.querySelectorAll('.table__button').forEach((button) => {
 
     if (!ticking) {
       window.requestAnimationFrame(function () {
-        var pos = (difference * 0.25) + 50;
+        var pos = (difference * 0.1) + 50;
         pos = (pos >= 100) ? 100 : pos;
         pos += '%';
         header.style.cssText = header.style.cssText.replace(/(.*\d{1,3}(\.\d*)?%\s)(\d{1,3}(\.\d*)?%)(.*)/, function (match, p1, p2, p3, p4, p5) {
