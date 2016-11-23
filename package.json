@@ -2,10 +2,10 @@
   "name": "hapi-places",
   "version": "1.0.0",
   "description": "hapi project",
-  "main": "index.js",
+  "main": "src/starter.js",
   "scripts": {
     "test": "node ./test/backend_test.js",
-    "start": "nodemon ./src/starter.js"
+    "start": "node ./src/starter.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +15,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FAC9/hapi-places/issues"
+  },
+  "engines": {
+    "node": "6.9.1"
   },
   "homepage": "https://github.com/FAC9/hapi-places#readme",
   "dependencies": {

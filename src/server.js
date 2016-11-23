@@ -1,12 +1,14 @@
+'use strict';
+
 const hapi = require('hapi');
-const server = new hapi.Server();
 const vision = require('vision');
 const path = require('path');
 const inert = require('inert');
 const routes = require('./routes.js');
+const server = new hapi.Server();
 
 server.connection({
-  port: 8000,
+  port: process.env.PORT || 8000,
   routes: {
     files: {
       relativeTo: path.join(__dirname, '../public')
