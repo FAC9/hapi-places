@@ -10,6 +10,7 @@ A site that generates a profile for a random city, to provide users with useful 
 
 ## How to check out our project
 
+- visit us on heroku http://hapi-places.herokuapp.com/ 
 - Clone this repo
 - Go into the directory and run ```npm run start``` (or ```nodemon src/server.js``` if you have nodemon installed)
 - Navigate to http://localhost:8000/ in your browser
