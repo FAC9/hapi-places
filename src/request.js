@@ -48,15 +48,7 @@ function wikiRequest (city, cb) {
     if (err) {
       cb(err);
     } else if (JSON.parse(body).query.pages[-1]) {
-      wikiUrlBuilder(city, (err, res, body) => {
-        if (err) {
-          cb(err);
-        } else if (JSON.parse(body).query.pages[-1]) {
-          cb('Invalid data returned', null);
-        } else {
-          cb(null, body);
-        }
-      });
+      cb(null, `${city} is a magical place...`);
     } else {
       cb(null, body);
     }
