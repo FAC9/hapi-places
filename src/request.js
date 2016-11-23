@@ -40,10 +40,6 @@ function cityImageCheck (currentImgUrl, country, cb) {
   });
 }
 
-// cityImageCheck('https://nomadlist.com/assets/img/cities/china-1500px.jpg', 'china', function (data) {
-//   console.log(data);
-// });
-
 function wikiRequest (city, cb) {
   Req(wikiUrlBuilder(city), (err, res, body) => {
     if (err) {
