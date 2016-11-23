@@ -76,7 +76,7 @@ function lookupIsoCode (countryName) {
 
 function generalRequest (url, cb) {
   Req(url, (err, res, body) => {
-    if (err) { throw err; }
+    if (err) { cb(err); }
     cb(null, body);
   });
 }
