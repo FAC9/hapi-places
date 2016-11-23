@@ -47,3 +47,4 @@ Below the main image there is a table which contains information about a number 
 # Known issues
 
 - The app occasionally provides incorrect results when searching with filters. As far as we can establish, this is because of an issue on the NomadList side.
+- Sometimes the Wikipedia page generated is not the most relevant page for the city
