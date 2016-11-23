@@ -66,7 +66,11 @@ function wikiRequest (city, cb) {
 function lookupIsoCode (countryName) {
   const codes = require('./countries.js');
   let country = codes.find(cn => cn['Name'] === countryName);
-  let isoCode = (country['Code'] || '');
+  let isoCode = '';
+  if (country) {
+    isoCode = country['Code'];
+  }
+  // let isoCode = (country['Code'] || '');  //country can be undefined
   return isoCode.toLowerCase();
 }
 
