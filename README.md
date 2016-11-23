@@ -1,6 +1,8 @@
 # Hapi Places
 
-A site that generates a profile for a random city, to provide users with useful information about living conditions. This project is for us to learn about building servers with Hapi, rendering templates with Handlebars on the server side, practicing testing with Istanbul and Tape, and generating API calls. The two apis we are using are;
+Hapi Places will be a dynamic web application that generates a profile for a random city, providing user with useful information about living conditions and a number of other factors that might influence their decision to relocate. 
+
+The reason behind the project is for our team to learn about building servers with Hapi, rendering templates with Handlebars on the server side, practising testing with Istanbul and Tape, and generating API calls. The two apis we are using are:
 - [Nomadlist](https://nomadlist.com/faq)
 - [Wikipedia](https://www.mediawiki.org/wiki/API:Main_page)
 
@@ -17,15 +19,28 @@ A site that generates a profile for a random city, to provide users with useful 
 
 # User Stories
 
-As a user;
-- When I first navigate to the site I am presented with information about a random city. When I refresh the page, I am presented with information about a new random city.
-- At the top of the page I should see an image of the random city.
+As a user...
+
+- When I first navigate to the app, I am presented with information about a random city. When I refresh the page, I am presented with information about a new random city.
+- At the top of the page I see an image of the random city.
 - I can see the name of the city in the center of the image.
 - Underneath the image, I see a statistics chart.
-- Inside the statistics chart, I first see a cost label, displaying the average living cost per month in USD. To the right of this, I see a button that says (I NEED) CHEAPER. When I click on the button, a new page loads with information about a new city, with a cheaper cost of living.
-- The next row shows the current temperature of the city. To the right of this, I see two buttons, one that says (I NEED) COLDER and one that says (I NEED) WARMER. When I click on either of these, I'm presented with a new page with either a hotter/colder temperature, depending on which button I clicked.
-- The next row displays the cities Internet rating, which shows either BAD/GOOD/VERY GOOD depending on the speed and availability of public WIFI. To the right of this, I see a button that says (I NEED) BETTER. When I click on this button, I'm presented with a new page with a better Internet rating.
-- The next row displays the cities Air Quality rating, which is given as a percentage. To the right of this, I see a button that says (I NEED) BETTER. When I click on this button, I'm presented with a new page with a better Air Quality rating.
-- The final row displays the cities Average Coffee Price, which is given in USD. To the right of this, I see a button that says (I NEED) CHEAPER. When I click on this button, I'm presented with a new page with a cheaper Average Coffee Price.
-- Underneath the statistics chart, I see a paragraph long quote about the city, taken from Wikipedia.
-- Underneath the quote, I see a large button, displaying 'BOOK FLIGHTS NOW'. When I click on this button, I am taken to a separate page to book flights to the city.
+
+## Stats chart
+
+I can view a table with 3 columns. Each row provides info about a specific metric:
+
+- Cost of living (i.e. average living cost for short-term inhabitants of the city in USD); button generates new city with cheaper cost of living
+- Current temperature (today, in celsius); 2 buttons to generate new cities with warmer / cooler temperature
+- Internet rating (average internet speed in MBPS); button to generate new city with faster internet
+- Safety (as a percentage, based on ratings provided by Nomad List, no guarantee of validity); button to generate new, safer city
+- Average coffee price (in USD, based on cappucino in local cafe); button to generate new city with cheaper coffee
+
+## More info
+
+- Underneath the statistics chart I can read the first 3 sentences of the Wikipedia entry for the given city. The quote links to the relevant Wikipedia page. Page opens in a new tab.
+- I can click on a CTA button that reads 'BOOK FLIGHTS NOW'. This will take the user to an external web page where they can browse for flights (probably SkyScanner).
+
+# Known issues
+
+The app occasionally provides incorrect results when searching with filters. As far as we can establish, this is because of an issue on the NomadList side.
