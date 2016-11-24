@@ -77,7 +77,7 @@ function test () {
 
   // Wikipedia
   tape('testing request function for wikipedia API when passed london returns JSON', function (t) {
-    req.wikiRequest('George Town', (err, data) => {
+    req.wikiRequest('George Town', 'South Africa', (err, data) => {
       if (err) { t.error(); }
       t.ok(data, 'We should have recieved data!');
       t.ok(typeof data === 'string', 'Our data should be a string... of JSON!');
@@ -88,13 +88,10 @@ function test () {
     });
   });
 
-  tape('testing request function for Wikipedia API should throw error when incorrect url given', function (t) {
-    req.wikiRequest('/lghrusfhuoerhi', (err, data) => {
-      if (err) {
-        t.pass('should throw error');
-      } else {
-        t.error('Should not return data');
-      }
+  tape('testing request function for Wikipedia API should return placeholder text when no article found', function (t) {
+    req.wikiRequest('/lghrusfhuoerhi', 'spain', (err, data) => {
+      if (err) t.error();
+      t.ok(data.indexOf('is a city in') > -1);
     });
     t.end();
   });
