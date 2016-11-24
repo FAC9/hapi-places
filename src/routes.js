@@ -1,5 +1,5 @@
 const cityDataBuilder = require('./citydatabuilder');
-const custom = require('./custom-requests.js');
+const customUrlBuilder = require('./custom-requests.js');
 module.exports = [
 
   {
@@ -21,7 +21,7 @@ module.exports = [
     handler: (req, rep) => {
       let qType = req.query.type;
       let qValue = req.query.value;
-      let nomadUrl = custom(qType, qValue);
+      let nomadUrl = customUrlBuilder(qType, qValue);
       cityDataBuilder(nomadUrl, (err, schema) => {
         if (err) {
           throw err;
