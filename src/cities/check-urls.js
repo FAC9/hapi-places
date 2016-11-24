@@ -1,3 +1,6 @@
+// we don't actually use this file, we just left it in for reference! It can be run in the command line in order to check
+// quality of Wikipedia links
+
 const request = require('request');
 const allUrls = require('./citylist.js').slice(300, 500);
 
@@ -33,4 +36,3 @@ function checkUrl () {
 }
 
 checkUrl();
-// });
