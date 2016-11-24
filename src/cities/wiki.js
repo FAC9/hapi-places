@@ -1,5 +1,12 @@
 function parseWiki (city) {
-  if (typeof city !== 'object') city = JSON.parse(city);
+  if (typeof city === 'string') {
+    if (city.indexOf('is a city in') > -1) {
+      return city;
+    } else {
+      city = JSON.parse(city);
+    }
+  }
+  // get wikipedia text from json object
   let wikiFullTextHtml = Object.keys(city.query.pages).map((item) => { return city.query.pages[item]; })[0].extract;
 
   // regex to remove html tags from wikipedia text

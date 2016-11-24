@@ -22,7 +22,7 @@ function cityDataBuilder (url, cb, cities = cityList) {
         let city = schema.city;
         Req.cityImageCheck(schema.image, schema.country, function (img) {
           schema.image = img || schema.image;
-          Req.wikiRequest(city, (err, data) => {
+          Req.wikiRequest(city, schema.country, (err, data) => {
             if (err) {
               cb(err);
             } else {
