@@ -37,6 +37,7 @@ body {
   font-family: 'Futura', 'Didact Gothic', sans-serif;
   font-size: 3em;
   letter-spacing: .8em;
+  text-indent: 0.8em;
   z-index: 2;
 }
 
@@ -45,6 +46,7 @@ body {
   font-family: 'Futura', 'Didact Gothic', sans-serif;
   font-size: 2em;
   letter-spacing: .5em;
+  text-indent:0.5em;
   z-index: 2;
 }
 
@@ -52,7 +54,7 @@ body {
   position: relative;
   color: rgba(255,255,255,0.4);
   font-weight: 400;
-  top: 15rem;
+  top: 11rem;
   cursor: pointer;
   transition: all .2s ease;
   font-family: 'Futura', 'Didact Gothic', sans-serif;
@@ -226,6 +228,18 @@ body {
   background: white;
   color: black;
   border: 3px solid black;
+}
+
+/*footer*/
+
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer__link {
+  color: cornflowerblue;
+  text-decoration: none;
 }
 
 

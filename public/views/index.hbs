@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <title>Hapi Places</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -16,54 +16,55 @@
   <h1 class="header__title">{{city}}</h1>
   <h2 class="header__subtitle">{{country}}</h2>
   <a href='/' class='header__regen'>Find Me Another City</a>
-
 </header>
 
-<table class="table">
-  <tr class="table__row">
-    <th class="table__cell table__header">STAT</th>
-    <th class="table__cell table__header">RATING</th>
-    <th class="table__cell table__header table__header--blue">SHOW ME</th>
-  </tr>
+  <table class="table">
+    <tr class="table__row">
+      <th class="table__cell table__header">STAT</th>
+      <th class="table__cell table__header">RATING</th>
+      <th class="table__cell table__header table__header--blue">SHOW ME</th>
+    </tr>
 
-  <tr class="table__row">
-    <td class="table__cell table__property">COST PER MONTH</td>
-    <td class="table__cell table__value">{{#if cost}}{{cost}}{{else}}${{/if}}</td>
-    <td class="table__cell table__button-container"><a href='/cheaper' name='living_cost' class="table__button table__button--orange">CHEAPER</a></td>
-  </tr>
+    <tr class="table__row">
+      <td class="table__cell table__property">COST PER MONTH</td>
+      <td class="table__cell table__value">{{#if cost}}{{cost}}{{else}}${{/if}}</td>
+      <td class="table__cell table__button-container"><a href='/cheaper' name='living_cost' class="table__button table__button--orange">CHEAPER</a></td>
+    </tr>
 
-  <tr class="table__row">
-    <td class="table__cell table__property">TEMPERATURE TODAY</td>
-    <td class="table__cell table__value">{{#if temp}}{{temp}}{{else}}C{{/if}}</td>
-    <td class="table__cell table__button-container"><a href='/colder' name='temp_colder' class="table__button table__button--blue">COLDER</a><a href='/warmer' name='temp_warmer' class="table__button table__button--orange">WARMER</a></td>
-  </tr>
+    <tr class="table__row">
+      <td class="table__cell table__property">TEMPERATURE TODAY</td>
+      <td class="table__cell table__value">{{#if temp}}{{temp}}{{else}}C{{/if}}</td>
+      <td class="table__cell table__button-container"><a href='/colder' name='temp_colder' class="table__button table__button--blue">COLDER</a><a href='/warmer' name='temp_warmer' class="table__button table__button--orange">WARMER</a></td>
+    </tr>
 
-  <tr class="table__row">
-    <td class="table__cell table__property">INTERNET SPEED</td>
-    <td class="table__cell table__value">{{#if internet}}{{internet}}{{else}}{{???}}{{/if}}</td>
-    <td class="table__cell table__button-container"><a href='/faster' name='internet' class="table__button table__button--orange">FASTER</a></td>
-  </tr>
+    <tr class="table__row">
+      <td class="table__cell table__property">INTERNET SPEED</td>
+      <td class="table__cell table__value">{{#if internet}}{{internet}}{{else}}{{???}}{{/if}}</td>
+      <td class="table__cell table__button-container"><a href='/faster' name='internet' class="table__button table__button--orange">FASTER</a></td>
+    </tr>
 
-  <tr class="table__row">
-    <td class="table__cell table__property">SAFETY</td>
-    <td class="table__cell table__value">{{#if safety}}{{safety}}{{else}}{{???}}{{/if}}</td>
-    <td class="table__cell table__button-container"><a href='/cheaper' name='safety' class="table__button table__button--orange">SAFER</a></td>
+    <tr class="table__row">
+      <td class="table__cell table__property">SAFETY</td>
+      <td class="table__cell table__value">{{#if safety}}{{safety}}{{else}}{{???}}{{/if}}</td>
+      <td class="table__cell table__button-container"><a href='/cheaper' name='safety' class="table__button table__button--orange">SAFER</a></td>
 
-  </tr>
+    </tr>
 
-  <tr class="table__row">
-    <td class="table__cell table__property">PRICE OF COFFEE</td>
-    <td class="table__cell table__value">{{#if coffee}}{{coffee}}{{else}}{{???}}{{/if}}</td>
-    <td class="table__cell table__button-container"><a href='/cheaper' name='coffee' class="table__button table__button--orange">CHEAPER</a></td>
-  </tr>
+    <tr class="table__row">
+      <td class="table__cell table__property">PRICE OF COFFEE</td>
+      <td class="table__cell table__value">{{#if coffee}}{{coffee}}{{else}}{{???}}{{/if}}</td>
+      <td class="table__cell table__button-container"><a href='/cheaper' name='coffee' class="table__button table__button--orange">CHEAPER</a></td>
+    </tr>
 
-</table>
+  </table>
 
-<p class="quote__header .header__title">About {{city}}</p>
-<section class="quote__container">
-  <a href="{{wiki}}" class="quote" target="blank">{{#if description}}{{description}}<br><em>Text courtesy of Wikipedia</em>{{else}}{{description}}{{/if}}</a>
-</section>
+  <p class="quote__header .header__title">About {{city}}</p>
+  <section class="quote__container">
+    <a href="{{wiki}}" class="quote" target="blank">{{#if description}}{{description}}<br><em>Text courtesy of Wikipedia</em>{{else}}{{description}}{{/if}}</a>
+  </section>
 
-<a class="callout" href="{{flightsLink}}" target="blank" title="Search for flights on Skyscanner">Find a flight&nbsp;>></a>
-<script src='js/main.js'></script>
+
+  <a class="callout" href="{{flightsLink}}" target="blank" title="Search for flights on Skyscanner">Find a flight&nbsp;>></a>
+  <footer class="footer">This incredible web app was made by the <a href="https://github.com/FAC9/hapi-places" class="footer__link" target="blank" title="See our GitHub repo">Backend Badgers</a>. Data powered by <a href="https://nomadlist.com/NomadList" class="footer__link" target="blank" title="Nomad List">Nomad List</a> and <a href="https://Wikipedia.org" class="footer__link" target="blank" title="Wikipedia">Wikipedia</a>.</footer>
+  <script src='js/main.js'></script>
 </body>
