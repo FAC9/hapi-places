@@ -1,4 +1,4 @@
-function getValues (json) {
+function getValuesFromNomad (json) {
   if (typeof json !== 'object') json = JSON.parse(json);
   const USDtoGBP = 0.805886193;
   var returnObj = {};
@@ -14,4 +14,4 @@ function getValues (json) {
   return returnObj;
 }
 
-module.exports = getValues;
+module.exports = getValuesFromNomad;
