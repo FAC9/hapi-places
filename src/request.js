@@ -5,7 +5,7 @@ const cityImageCheck = require('./lib/nomadrequest').cityImageCheck;
 const wikiUrlBuilder = require('./lib/wikirequest').wikiUrlBuilder;
 const wikiRequest = require('./lib/wikirequest').wikiRequest;
 const lookupIsoCode = require('./lib/lookupisocode');
-const generalRequest = require('./lib/generalRequest');
+const generalRequest = require('./lib/generalrequest');
 
 module.exports = {
   nomadRequest,
