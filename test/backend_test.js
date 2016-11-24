@@ -91,7 +91,7 @@ function test () {
   tape('testing request function for Wikipedia API should return placeholder text when no article found', function (t) {
     req.wikiRequest('/lghrusfhuoerhi', 'spain', (err, data) => {
       if (err) t.error();
-      t.ok(data.indexOf('is a city that resides in') > -1);
+      t.ok(data.indexOf('is a city in') > -1);
     });
     t.end();
   });

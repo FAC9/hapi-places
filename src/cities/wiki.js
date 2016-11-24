@@ -1,6 +1,6 @@
 function parseWiki (city) {
   if (typeof city === 'string') {
-    if (city.indexOf('is a city that resides in') > -1) {
+    if (city.indexOf('is a city in') > -1) {
       return city;
     } else {
       city = JSON.parse(city);
