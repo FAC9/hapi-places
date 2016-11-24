@@ -1,7 +1,7 @@
-const cityList = require('./cities/citylist');
-const getData = require('./cities/getdata');
-const Req = require('./request');
-const wikiParse = require('./cities/wiki');
+const cityList = require('../cities/citylist');
+const getData = require('../cities/getdata');
+const Req = require('../request');
+const wikiParse = require('../cities/wiki');
 
 function cityDataBuilder (url, cb, cities = cityList) {
   if (url) {

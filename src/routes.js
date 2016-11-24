@@ -1,5 +1,5 @@
-const cityDataBuilder = require('./citydatabuilder');
-const customUrlBuilder = require('./custom-requests.js');
+const cityDataBuilder = require('./lib/citydatabuilder');
+const customUrlBuilder = require('./lib/custom-requests.js');
 
 const home = {
   method: 'GET',
