@@ -15,20 +15,16 @@ const convertDataForQuery = {
   // convert from percentage value to a score from 0-5
   safety: function (value) { return value / 20; },
   living_cost: function (value) {
-    console.log(value);
     return Math.ceiling(value / USDtoGBP);
   },
   coffee: function (value) { Math.ceiling(value / USDtoGBP); }
 };
 
 function makeUrl (type, val) {
-  console.log(url);
   if (convertDataForQuery[type]) {
-    console.log('converting');
     val = convertDataForQuery[type](val);
   }
   let fullUrl = `${url}${urlParams[type]}${val}`;
-  console.log(fullUrl);
   return fullUrl;
 }
 
